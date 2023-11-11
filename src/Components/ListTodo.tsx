@@ -18,8 +18,9 @@ export default function ListTodo() {
 
   return (
     <ContentTodos>
+      <div>
+      <SubTittle>Completed ✔️</SubTittle>
       <ListTodos>
-        <SubTittle>Completed ✔️</SubTittle>
         {todoState.map((item) =>
           item.completed ? (
             <TodoItem key={item.id}>
@@ -33,10 +34,12 @@ export default function ListTodo() {
               </ActionsTodo>
             </TodoItem>
           ) : null
-        )}
+          )}
       </ListTodos>
+      </div>
+      <div>
+      <SubTittle>Incompleted ❌</SubTittle>
       <ListTodos>
-        <SubTittle>Incompleted ❌</SubTittle>
         {todoState.map((item) =>
           !item.completed ? (
             <TodoItem key={item.id}>
@@ -50,8 +53,9 @@ export default function ListTodo() {
               </ActionsTodo>
             </TodoItem>
           ) : null
-        )}
+          )}
       </ListTodos>
+      </div>
     </ContentTodos>
   );
 }

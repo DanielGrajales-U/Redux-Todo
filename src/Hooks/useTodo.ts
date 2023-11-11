@@ -2,6 +2,7 @@
 import { useDispatch } from "react-redux"
 import { addTodo, deleteTodo, toggleTodo } from "../Redux/State/TodoSlice"
 import { DefaultTodo } from "../Utils"
+import { TYPE_TODO_ID } from "../models"
 
 
 export default function useTodo() {
@@ -12,11 +13,11 @@ export default function useTodo() {
     distpath(addTodo(data))
   }
 
-  const toggle = (todoId: number) => {
+  const toggle = (todoId: TYPE_TODO_ID) => {
     distpath(toggleTodo(todoId))
   }
 
-  const deleteToTodo = (todoId: number) => {
+  const deleteToTodo = (todoId: TYPE_TODO_ID) => {
     distpath(deleteTodo(todoId))
   } 
   

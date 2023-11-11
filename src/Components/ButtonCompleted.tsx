@@ -1,9 +1,10 @@
 import { useTodo } from "../Hooks";
 import { ButtonToggle } from "../Styled-Components";
+import { TYPE_TODO_ID } from "../models";
 
 export interface Props{
     text: string;
-    id: number
+    id: TYPE_TODO_ID
 }
 
 export default function ButtonCompleted({text, id}: Props) {
