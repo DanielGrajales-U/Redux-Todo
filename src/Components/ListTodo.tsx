@@ -12,9 +12,15 @@ import {
 } from '../Styled-Components';
 import { ButtonCompleted } from '.';
 import ButtonToDelete from './ButtonToDelete';
+import { useSEO } from '../Hooks';
 
 export default function ListTodo() {
   const todoState = useSelector((store: AppStore) => store.todo);
+
+  useSEO({
+    title: `[${todoState.length}] Redux Todo`,
+    description: 'Añadir, Modificar y Eliminar tareas 👀'
+  })
 
   return (
     <ContentTodos>
